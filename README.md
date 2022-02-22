@@ -2,6 +2,9 @@
 
 ## First of all, I would like to begin by thanking you for giving me an opportunity to answer questions for Data Engineer Intern position. This is a great  opportunity for me to remmember what I know. But with limited ability and time, I attemped to answer as many these questions as possible I could. Below are my result, there are still several remaining questions is not completed.
 
+
+>. NOTE: The link is attached below each SQL anwsers frequently interrupted, so you may not see the result. I apologize for that
+
 # Data Engineer Questions
 
 
