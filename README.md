@@ -1,8 +1,8 @@
 # Interview
 
+## First of all, I would like to begin by thanking you for giving me an opportunity to answer questions for Data Engineer Intern position. This is a great  opportunity for me to remmember what I know. But with limited ability and time, I attemped to answer as many these questions as possible I could. Below are my result, there are still several remaining questions is not completed.
+
 # Data Engineer Questions
-
-
 
 
 ## Question.1: 
@@ -31,6 +31,63 @@ FROM Customer
 WHERE id NOT IN (SELECT customerId FROM Orders)
 ```
  - You can access this link to view the result: http://sqlfiddle.com/#!9/9823d0/3
+## Question 3: Assume that we have Employee(id, name, salary, departmentId) and Department(id, name). A company's executives are interested in seeing who earns the most money in each of the company's departments. A high earner in a department is an employee who has a salary in the top three unique salaries for that department. Write an SQL query to find the employees who are high earners in each of the departments. (20 points)
+
+### This question is quite challenging for me. After a lot of searching, it's my solution. Instead of solving the question according to the problem. I solve the lower problem.
+
+```
+ID	Name	Salary	DepartmentId
+1	Joe	70000	1
+2	Henry	80000	2
+3	Sam	60000	2
+4	Max	90000	1
+5	Janet	69000	1
+6	Randy	85000	1
+```
+- We have the above table. For example.I'll find the top three biggest salary of employees.
+- Salary = [70000, 80000, 60000, 90000, 69000, 85000]
+	- 70000 < [80000, 90000, 85000] => count = 3
+ 	- 80000 < [90000, 85000] => count = 2
+ 	- 60000: any element in array are greater than 60000 => count = 5
+ 	- 90000 < [] => count  = 0
+ 	- 69000 < [70000, 80000, 90000, 85000] => count = 4
+ 	- 85000 < [90000] => count = 1
+=> the top three biggest salary of employees: 80000 , 85000 , 90000.
+
+##### With the above explanation we have SQL query:
+```sql
+SELECT e1.Name , e1.Salary
+FROM Employee e1
+WHERE 3 >
+(
+    SELECT COUNT(DISTINCT e2.Salary)
+    FROM Employee e2
+    WHERE e2.Salary > e1.Salary
+)
+;
+```
+ - You can access this link to view the result: http://sqlfiddle.com/#!9/c75705
+
+
+##### Finally, we need to join the Employee table with Department in order to retrieve the department information.
+```sql
+SELECT
+    d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
+FROM
+    Employee e1
+        JOIN
+    Department d ON e1.DepartmentId = d.Id
+WHERE
+    3 > (SELECT
+            COUNT(DISTINCT e2.Salary)
+        FROM
+            Employee e2
+        WHERE
+            e2.Salary > e1.Salary
+                AND e1.DepartmentId = e2.DepartmentId
+        )
+;
+```
 
 ## Question 4:
 ### We have an array of n elements A[1..n]. This array contains n different numbers from 0 to n. Given that there are totally n + 1 numbers from 0 to n, there is a missing number. (15 points)
