@@ -2,6 +2,36 @@
 
 # Data Engineer Questions
 
+
+
+
+## Question.1: 
+### Assume that we have a table storing scores of athletes in a competition: Performance(AthleteId, Gender, Country, Score).Write an SQL to find the second highest score of athletes. (15 points)
+
+The first idea when I'm facing this problem is to create a temporary table to store scores except for the highest score of athletes. After that, We  can easily select  the second highest score of athletes
+```sql
+SELECT AthleteId, Score
+FROM Performance
+WHERE Score= (
+	SELECT MAX(Score)
+    	FROM  Performance
+    	WHERE Score NOT IN  (SELECT  MAX(Score) FROM Performance)
+)
+```
+- You can access this link to view the result:  http://sqlfiddle.com/#!9/557aba4/1
+
+##### This solution is convenient, but it's not optimal. Especially if we want to find all athletes with the third or fourth highest scores.
+
+## Question.2 : Assume that we have Customers(id, name) and Orders(id, customerId) tables. Write an SQL query to report all customers who never order anything. (10 points) 
+
+This question is quite simple,  my quickest way is:
+```sql
+SELECT id
+FROM Customer
+WHERE id NOT IN (SELECT customerId FROM Orders)
+```
+ - You can access this link to view the result: http://sqlfiddle.com/#!9/9823d0/3
+
 ## Question 4:
 ### We have an array of n elements A[1..n]. This array contains n different numbers from 0 to n. Given that there are totally n + 1 numbers from 0 to n, there is a missing number. (15 points)
 
