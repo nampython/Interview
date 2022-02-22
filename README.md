@@ -66,7 +66,7 @@ WHERE 3 >
 )
 ;
 ```
- - You can access this link to view the result: http://sqlfiddle.com/#!9/c75705
+
 
 
 ##### Finally, we need to join the Employee table with Department in order to retrieve the department information.
@@ -88,7 +88,8 @@ WHERE
         )
 ;
 ```
-
+ - You can access this link to view the result: http://sqlfiddle.com/#!9/c75705
+ 
 ## Question 4:
 ### We have an array of n elements A[1..n]. This array contains n different numbers from 0 to n. Given that there are totally n + 1 numbers from 0 to n, there is a missing number. (15 points)
 
