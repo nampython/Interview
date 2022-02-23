@@ -201,5 +201,25 @@ For example
         }
 ```
 
+## QUESTION 7: We have a crawler that crawls websites in a list to find sensitive information (e.g., people talk or have opinions about our products.). Our list initially contains 100 websites called seeds. When a crawler visits a website, it can find several links to other websites. Depending on the information of the linking websites, they can be added in the list to revisit later (e.g., if they are related to the seeds or contain valuable information about what we want to know, i.e., sensitive information). It means that with the initial of 100 seeds, our list can be updated to include more websites. However, since our resources are limited, we want to maintain only up to 1000 websites. It means that in addition to 100 seeds, we can only maintain a maximum of 900 other websites. Design a solution to maintain this list of websites. Also justify your solution. (Max 10 points)
+### Hint: before the list grows to 1000 websites, you can freely add new websites to the list. However, when the list reaches 1000 websites, you need an algorithm to rank websites according to the usefulness of their information to our wanted information (i.e., sensitive information) and keep only those with high scores while removing those with low scores. E.g., when a new website is discovered and its score is higher than an existing one in the list, the new website will be replaced by the lower score in the list
+
+My solution is to visit any websites in a list of 100 seeds. When visiting each website. We need an algorithm to find a point ranking the usefulness of their information. And, attached each point for their website,  and when an array is filled up with 1000 seeds, we need an algorithm to sort an array in ascending or descending order. After that, with each website is found, we will compare this point of the website with the lowest point in array. If this point is greater than the lowest point in array, I will get this website out of my list. And add the found website in array with suitable position 
+
+
+
+## QUESTION 9 We have three identical six-sided dice. We roll one dice first and the remaining two dice after that. What is the probability that the point obtained in the first roll is greater than the sum of the points obtained in the second roll. (2 points)
+
+* We have three dice A, B, C = {1, 2, 3, 4, 5, 6} sum all of the possibilities when rolling dice: 6 * 6 * 6 = 216
+
+* with the above condition: 
+- When rolling the first dice: 
+	- A = {3} -> B,C = {1, 1} -> the probability is 1
+	- A = {4} -> B, C = {1, 1} or {1, 2} -> the probability is 2
+	- A = {5} -> B, C = {1, 1} or {1, 2} or {1, 3} -> the probability is 3
+ 	- A = {6} -> B, C = {1, 1} or {1, 2} or {1, 3} or {1, 3} or {2, 3} -> the probability is 5
+* -> the probability that the point obtained in the first roll is greater than the sum of the points obtained in the second roll is (1 + 2 + 3 + 5)  / 216 = 11/ 216
+
+
 
 
