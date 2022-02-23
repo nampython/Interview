@@ -207,6 +207,14 @@ For example
 My solution is to visit any websites in a list of 100 seeds. When visiting each website. We need an algorithm to find a point ranking the usefulness of their information. And, attached each point for their website,  and when an array is filled up with 1000 seeds, we need an algorithm to sort an array in ascending or descending order. After that, with each website is found, we will compare this point of the website with the lowest point in array. If this point is greater than the lowest point in array, I will get this website out of my list. And add the found website in array with suitable position 
 
 
+## QUESTION 8: Assume that you are a rector of a university and you want to show to the public a statistics report for examinees in your university entrance exam, what is the best graph to use. Please justify your decision. (Max 2 points)
+- For me the best graph to use in this question is Histogram.
+	- column x: grades
+	- column y: frequency
+With the Histogram graph
+- examinees  can easily obvious scores that frequently appears
+- examinees can easily obvious the lowest or biggest or medium scores
+
 
 ## QUESTION 9 We have three identical six-sided dice. We roll one dice first and the remaining two dice after that. What is the probability that the point obtained in the first roll is greater than the sum of the points obtained in the second roll. (2 points)
 
