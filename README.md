@@ -216,17 +216,7 @@ With the Histogram graph
 - examinees can easily obvious the lowest or biggest or medium scores
 
 
-## QUESTION 9 We have three identical six-sided dice. We roll one dice first and the remaining two dice after that. What is the probability that the point obtained in the first roll is greater than the sum of the points obtained in the second roll. (2 points)
 
-* We have three dice A, B, C = {1, 2, 3, 4, 5, 6} sum all of the possibilities when rolling dice: 6 * 6 * 6 = 216
-
-* with the above condition: 
-- When rolling the first dice: 
-	- A = {3} -> B,C = {1, 1} -> the probability is 1
-	- A = {4} -> B, C = {1, 1} or {1, 2} -> the probability is 2
-	- A = {5} -> B, C = {1, 1} or {1, 2} or {1, 3} -> the probability is 3
- 	- A = {6} -> B, C = {1, 1} or {1, 2} or {1, 3} or {1, 3} or {2, 3} -> the probability is 5
-* -> the probability that the point obtained in the first roll is greater than the sum of the points obtained in the second roll is (1 + 2 + 3 + 5)  / 216 = 11/ 216
 
 
 
